@@ -26,7 +26,7 @@ function Invoke-ScoutRender {
 
     $content = Get-BindedContext $content $ctx
 
-    if ($layout -ne $null) {
+    if ($layout) {
 
         if ($layout.EndsWith(".html")) {
             $layout = (Get-Content -Path $layout -Raw).Trim().Replace("`n", " ")
