@@ -47,7 +47,7 @@
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            Tags = @("Template engine", "Template utility", "HTML Templates", "Text Templates")
+            Tags = @("Template-engine", "Template-utility", "HTML-Templates", "Text-Templates")
 
             # A URL to the license for this module.
             LicenseUri = 'https://github.com/AriDevK/Scout-PS?tab=GPL-3.0-1-ov-file'
