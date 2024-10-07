@@ -12,7 +12,7 @@
     RootModule        = 'Scout.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '1.0'
+    ModuleVersion     = '1.0.1'
 
     # ID used to uniquely identify this module
     GUID              = 'fa36ba6a-82ea-43ef-82ec-73ba94c50c9b'
