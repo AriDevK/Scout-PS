@@ -2,7 +2,7 @@ using namespace System.Web
 using namespace System.Text.RegularExpressions
 
 $directorySeparator = [System.IO.Path]::DirectorySeparatorChar
-$moduleName = $PSScriptRoot.Split($directorySeparator)[-1]
+$moduleName = $PSScriptRoot.Split($directorySeparator)[-2]
 $moduleManifest = $PSScriptRoot + $directorySeparator + $moduleName + '.psd1'
 $publicFunctionsPath = $PSScriptRoot + $directorySeparator + 'Public' + $directorySeparator
 $privateFunctionsPath = $PSScriptRoot + $directorySeparator + 'Private' + $directorySeparator
