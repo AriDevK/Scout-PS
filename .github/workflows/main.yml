@@ -11,5 +11,5 @@ jobs:
         
       - name: Publishing
         run: |
-                    Publish-Module -Path '...' -NuGetApiKey ${{ secrets._PSG_API_KEY }}
+                    Publish-Module -Path '.' -NuGetApiKey ${{ secrets._PSG_API_KEY }}
         shell: pwsh
