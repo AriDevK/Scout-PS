@@ -3,7 +3,8 @@ function Invoke-ScoutRender {
     param(
         [string] $content,
         [hashtable] $ctx,
-        [string] $layout = $null
+        [string] $layout = $null,
+        [switch] $secure = $false
     )
 
     if ($content.EndsWith(".html")) {
@@ -11,8 +12,7 @@ function Invoke-ScoutRender {
     }
 
     $content = Remove-Comments $content
-
-
+    
     Find-PrintDirectives $content | ForEach-Object {
         $directive = $_.Value
         $directive = $directive.Replace(' ', '').Replace('$=', '${ echo $').Replace('=$', ';}$')
@@ -24,7 +24,7 @@ function Invoke-ScoutRender {
         $content = $content.Replace($directive, (Invoke-Directive $directive $ctx))
     }
 
-    $content = Get-BindedContext $content $ctx
+    $content = Get-BindedContext $content $ctx $secure
 
     if ($layout) {
 
