@@ -30,7 +30,7 @@ Scout exposes a single function `Invoke-ScoutRender` that takes a template file,
 
 Method signature:
 ```powershell
-Invoke-ScoutRender [[-content] <string>] [[-ctx] <hashtable>] [[-layout] <string>]
+Invoke-ScoutRender [[-content] <string>] [[-ctx] <hashtable>] [[-layout] <string>] [[-secure] <switch>]
 ```
 
 
@@ -89,9 +89,10 @@ $result = Invoke-ScoutRender $page $context $layout
     Hello $asd 
 <section/>
 
-<section id="html-excape">
-  $# this variable has been escaped to be safety binded #$
-  $# RESULT: <h1>hello world >:3</h1> #$
+<section id="html-esape">
+  $# this variable has been escaped to be safety binded if the $secure switch has been passed as true #$
+  $# RESULT w/TRUE: &gt;h1&lt;hello world >:3&gt;/h1&lt; #$
+  $# RESULT w/FALSE: <h1>hello world >:3</h1> #$
   $wHtml  
 <section/>
 
